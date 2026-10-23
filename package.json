@@ -1,0 +1,39 @@
+{
+  "name": "kabarin-news-portal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portal berita Indonesia tanpa SQLite, siap Vercel dengan RSS resmi dan chatbot PageSquire.",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "build": "node scripts/build-site.mjs",
+    "check:vercel": "node scripts/check-vercel.mjs",
+    "dev": "node --env-file-if-exists=.env scripts/dev-server.mjs",
+    "db:setup": "node --env-file-if-exists=.env scripts/setup-db.mjs",
+    "db:check": "node --env-file-if-exists=.env scripts/check-db.mjs",
+    "test:postgres": "node scripts/test-postgres.mjs",
+    "news:sync:node": "node scripts/sync-news.mjs",
+    "test:node": "node --test tests/node-*.test.mjs",
+    "build:assistant": "node scripts/build-assistant.mjs",
+    "test:assistant": "php tests/assistant.php",
+    "test:assistant:http": "node tests/endpoints.mjs",
+    "test:navigation": "php tests/navigation.php",
+    "test:reading": "php tests/reading.php",
+    "news:sync": "php scripts/sync-news.php",
+    "test:news": "php tests/news.php",
+    "test:news:http": "node tests/news-http.mjs",
+    "check": "node --check app.js && node --check data.js && node scripts/check-data.mjs",
+    "assets": "node scripts/download-assets.mjs"
+  },
+  "devDependencies": {
+    "ajv": "8.20.0",
+    "ajv-draft-04": "^1.0.0",
+    "esbuild": "0.28.2"
+  },
+  "dependencies": {
+    "@vercel/functions": "^3.10.3",
+    "fast-xml-parser": "^5.11.2",
+    "pg": "^8.23.1"
+  }
+}

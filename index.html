@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ed403b">
+  <meta name="description" content="Kabarin — Jelajahi berita Indonesia dan dunia dari ANTARA, CNN Indonesia dan CNBC Indonesia, lengkap dengan atribusi dan tautan sumber.">
+  <title>Kabarin — Kabar baik dimulai dari sini.</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preload" href="assets/fonts/jakarta-400.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=20261023-news-2">
+  <script src="assets/news-snapshot.js?v=20261023-loading-1" defer></script>
+  <script src="data.js?v=20261023-loading-1" defer></script>
+  <script src="app.js?v=20261023-loading-1" defer></script>
+  <link rel="stylesheet" href="assets/assistant/pagesquire.css?v=20261023-news-1">
+  <link rel="stylesheet" href="assets/assistant/assistant.css?v=20261023-news-1">
+  <script src="assets/assistant/assistant.js?v=20261023-loading-1" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Langsung ke konten</a>
+  <div class="utility-bar"><div class="container utility-inner"><span id="today-date">Rabu, 21 Oktober 2026</span><span class="utility-tagline">Sudut pandang baru, setiap hari.</span><div class="utility-actions"><span class="demo-label">BERITA TERKINI</span><button id="theme-toggle" class="text-action" aria-label="Aktifkan mode gelap"></button><a href="#tersimpan" class="saved-link"><span data-icon="bookmark"></span> Tersimpan <span id="saved-count">0</span></a></div></div></div>
+  <header class="site-header">
+    <div class="container masthead"><a class="brand" href="#" aria-label="Kabarin, beranda">kabarin<span class="brand-dot">.</span><span class="brand-label">CERITA YANG BERARTI.</span></a><div class="masthead-caption">Melihat lebih dekat.<br><strong>Memahami lebih jauh.</strong></div><div class="masthead-actions"><button class="search-trigger" data-action="search" aria-label="Buka pencarian berita"><span data-icon="search"></span><span>Cari berita, topik, atau tokoh</span><kbd>⌘ K</kbd></button><a href="#newsletter" class="button button-dark newsletter-top">Ikuti Kabarin <span data-icon="arrow-up-right"></span></a><button class="icon-button mobile-menu-trigger" data-action="menu" aria-label="Buka menu" aria-expanded="false"><span data-icon="menu"></span></button></div></div>
+    <div class="nav-border"><nav class="container main-nav" aria-label="Navigasi utama" id="main-nav"></nav></div>
+  </header>
+  <main id="main-content" tabindex="-1"><div class="container news-loading" role="status"><span class="eyebrow">KABARIN</span><h1>Menyiapkan kabar untukmu.</h1><p>Menghubungkan berita dari sumber…</p></div></main>
+  <footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand"><a class="brand" href="#">kabarin<span class="brand-dot">.</span></a><p>Setiap cerita membuka perspektif.<br>Temukan kabar yang berarti untukmu.</p><div class="footer-socials"><button data-action="info" data-info="Instagram" aria-label="Tentang Instagram Kabarin">ig</button><button data-action="info" data-info="X / Twitter" aria-label="Tentang X Kabarin">𝕏</button><button data-action="info" data-info="YouTube" aria-label="Tentang YouTube Kabarin"><span data-icon="play"></span></button><button data-action="info" data-info="TikTok" aria-label="Tentang TikTok Kabarin">♪</button></div></div><div><h3>Jelajahi</h3><div class="footer-links" id="footer-categories"></div></div><div><h3>Ruang Kabarin</h3><div class="footer-links"><a href="#koleksi/editor">Pilihan editor</a><a href="#koleksi/populer">Berita terpopuler</a><a href="#koleksi/lensa">Lensa Kabarin</a><a href="#kategori/opini">Ruang opini</a><a href="#tersimpan">Bacaan tersimpan</a></div></div><div><h3>Tentang kami</h3><div class="footer-links"><button data-action="info" data-info="Tentang Kabarin">Tentang Kabarin</button><button data-action="info" data-info="Redaksi">Redaksi</button><button data-action="info" data-info="Pedoman media siber">Pedoman media siber</button><button data-action="info" data-info="Hubungi kami">Hubungi kami</button><button data-action="info" data-info="Kebijakan privasi">Kebijakan privasi</button></div></div></div><div class="footer-bottom"><span>© 2026 Kabarin. Dibuat untuk rasa ingin tahu.</span><span>Cuplikan berita dari sumber · Hak cipta mengikuti penerbit.</span><button data-action="top">Kembali ke atas <span data-icon="arrow-up"></span></button></div></div></footer>
+  <dialog id="search-dialog" class="search-dialog" aria-label="Pencarian berita"><form id="search-form" class="search-form"><span data-icon="search"></span><label class="sr-only" for="search-input">Cari berita</label><input id="search-input" name="query" type="search" placeholder="Apa yang ingin kamu ketahui?" autocomplete="off" maxlength="120" required><button class="icon-button" type="button" data-action="close-dialog" aria-label="Tutup pencarian"><span data-icon="x"></span></button></form><div class="search-suggestions"><p class="eyebrow">COBA JELAJAHI</p><div id="search-topics" class="topic-tags"></div><p class="search-hint">Tekan Enter untuk mencari <span>ESC untuk menutup</span></p></div></dialog>
+  <dialog id="menu-dialog" class="menu-dialog" aria-label="Menu navigasi"><div class="menu-heading"><a class="brand" href="#">kabarin<span class="brand-dot">.</span></a><button class="icon-button" data-action="close-dialog" aria-label="Tutup menu"><span data-icon="x"></span></button></div><nav id="mobile-nav" aria-label="Navigasi mobile"></nav><div class="menu-bottom"><a href="#tersimpan"><span data-icon="bookmark"></span> Bacaan tersimpan</a><button data-action="search"><span data-icon="search"></span> Cari berita</button></div></dialog>
+  <dialog id="info-dialog" class="info-dialog" aria-label="Informasi Kabarin"><button class="icon-button dialog-close" data-action="close-dialog" aria-label="Tutup informasi"><span data-icon="x"></span></button><div id="info-content"></div></dialog>
+  <dialog id="gallery-dialog" class="gallery-dialog" aria-label="Cerita foto"><div id="gallery-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <noscript><div class="noscript">Aktifkan JavaScript untuk menjelajahi portal berita Kabarin.</div></noscript>
+</body>
+</html>

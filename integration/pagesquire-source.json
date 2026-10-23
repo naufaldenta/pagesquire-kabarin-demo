@@ -1,0 +1,13 @@
+{
+  "repository": "https://github.com/naufaldenta/pagesquire",
+  "commit": "2e91675605156c73c0a5f553086fec5996573d82",
+  "version": "0.1.0-alpha.0",
+  "packages": [
+    "@pagesquire/protocol",
+    "@pagesquire/core",
+    "@pagesquire/client",
+    "@pagesquire/server",
+    "pagesquire/server"
+  ],
+  "build": "npm run build:assistant"
+}

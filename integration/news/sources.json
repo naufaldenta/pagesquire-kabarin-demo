@@ -1,0 +1,22 @@
+{
+  "feeds": [
+    {"id":"cnn-nasional","publisher":"CNN Indonesia","category":"nasional","url":"https://www.cnnindonesia.com/nasional/rss"},
+    {"id":"cnn-dunia","publisher":"CNN Indonesia","category":"dunia","url":"https://www.cnnindonesia.com/internasional/rss"},
+    {"id":"cnn-ekonomi","publisher":"CNN Indonesia","category":"ekonomi","url":"https://www.cnnindonesia.com/ekonomi/rss"},
+    {"id":"cnn-teknologi","publisher":"CNN Indonesia","category":"teknologi","url":"https://www.cnnindonesia.com/teknologi/rss"},
+    {"id":"cnn-olahraga","publisher":"CNN Indonesia","category":"olahraga","url":"https://www.cnnindonesia.com/olahraga/rss"},
+    {"id":"cnn-gaya-hidup","publisher":"CNN Indonesia","category":"gaya-hidup","url":"https://www.cnnindonesia.com/gaya-hidup/rss"},
+    {"id":"cnn-hiburan","publisher":"CNN Indonesia","category":"hiburan","url":"https://www.cnnindonesia.com/hiburan/rss"},
+    {"id":"antara-politik","publisher":"ANTARA News","category":"nasional","url":"https://www.antaranews.com/rss/politik.xml"},
+    {"id":"antara-hukum","publisher":"ANTARA News","category":"nasional","url":"https://www.antaranews.com/rss/hukum.xml"},
+    {"id":"antara-dunia","publisher":"ANTARA News","category":"dunia","url":"https://www.antaranews.com/rss/dunia.xml"},
+    {"id":"antara-ekonomi","publisher":"ANTARA News","category":"ekonomi","url":"https://www.antaranews.com/rss/ekonomi.xml"},
+    {"id":"antara-tekno","publisher":"ANTARA News","category":"teknologi","url":"https://www.antaranews.com/rss/tekno.xml"},
+    {"id":"antara-olahraga","publisher":"ANTARA News","category":"olahraga","url":"https://www.antaranews.com/rss/olahraga.xml"},
+    {"id":"antara-lifestyle","publisher":"ANTARA News","category":"gaya-hidup","url":"https://www.antaranews.com/rss/lifestyle.xml"},
+    {"id":"antara-otomotif","publisher":"ANTARA News","category":"otomotif","url":"https://www.antaranews.com/rss/otomotif.xml"},
+    {"id":"antara-hiburan","publisher":"ANTARA News","category":"hiburan","url":"https://www.antaranews.com/rss/hiburan.xml"},
+    {"id":"cnbc-opini","publisher":"CNBC Indonesia","category":"opini","url":"https://www.cnbcindonesia.com/opini/rss"},
+    {"id":"antara-photo","publisher":"ANTARA News","category":"nasional","kind":"photo","url":"https://www.antaranews.com/rss/photo.xml"}
+  ]
+}

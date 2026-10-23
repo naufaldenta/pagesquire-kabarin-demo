@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+const base=process.env.KABARIN_TEST_URL??'http://localhost/tes_openclaw/';
+const url=new URL('api/news.php',base);
+const response=await fetch(url);assert.equal(response.status,200);assert.match(response.headers.get('content-type'),/application\/json/);
+const data=await response.json();assert.ok(data.articles.length>=180);assert.equal(data.meta.coverage,'excerpt');
+assert.equal(new Set(data.articles.map(a=>a.sourceUrl)).size,data.articles.length);
+const id=data.articles[0].id;const archive=await fetch(new URL(`api/news.php?ids=${id}`,base));assert.equal(archive.status,200);assert.equal((await archive.json()).articles[0].id,id);
+const bad=await fetch(new URL('api/news.php?ids=../../.env',base));assert.equal(bad.status,422);
+const method=await fetch(url,{method:'POST'});assert.equal(method.status,405);
+assert.ok(!JSON.stringify(data).includes('PAGESQUIRE_API_KEY'));
+console.log(`PASS: news JSON API, ${data.articles.length} real articles, archive identity, invalid IDs, method restrictions and coverage metadata.`);

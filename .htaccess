@@ -1,0 +1,11 @@
+Options -Indexes
+
+# Keep configuration, dependencies, tests and integration source private.
+<FilesMatch "^(?:\.env(?:\..*)?|composer\.(?:json|lock)|package(?:-lock)?\.json|.*\.log)$">
+  Require all denied
+</FilesMatch>
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^(?:\.vendor|\.build|vendor|node_modules|integration|server|database|tests|scripts)(?:/|$) - [F,L]
+  RewriteRule ^(?:\.git|\.agents|\.aider-desk|\.research)(?:/|$) - [F,L]
+</IfModule>
