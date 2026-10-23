@@ -88,7 +88,7 @@ export function createAssistantHost({env=process.env,store:injectedStore,provide
       const handler=createChatHandler({engine:guardedEngine,store:config.store,origin,authorize:async()=>session,requestsPerMinute:20,timeoutMs:55000});
       let response=await handler(request);
       if(quotaRejected)response=json({error:{code:'DEMO_DAILY_LIMIT',message:'Batas panggilan AI demo hari ini tercapai. Coba besok pukul 07.00 WIB.'}},429);
-      if(quota){const status=await quota.status();response.headers.set('X-Demo-Remaining',String(status.remaining));response.headers.set('X-Demo-Resets-At',status.resetsAt);if(response.status===429)response.headers.set('Retry-After',String(Math.max(1,Math.ceil((Date.parse(status.resetsAt)-Date.now())/1000))));}
+      if(quota){const status=await quota.status();response.headers.set('X-Demo-Remaining',String(status.remaining));response.headers.set('X-Demo-Resets-At',status.resetsAt);if(response.status===429&&(await response.clone().json()).error?.code==='DEMO_DAILY_LIMIT')response.headers.set('Retry-After',String(Math.max(1,Math.ceil((Date.parse(status.resetsAt)-Date.now())/1000))));}
       return response;
     }catch(error){const known=error instanceof AssistantError;return json({error:{code:known?error.code:'ASSISTANT_UNAVAILABLE',message:known?error.message:'Asisten sementara belum tersedia.'}},known?error.status:503,error?.status===429?{'Retry-After':'60'}:{});}
   };

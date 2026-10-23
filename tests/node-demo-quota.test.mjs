@@ -34,6 +34,10 @@ test('Exact cached retry charges neither another message nor inference; a confli
   assert.equal((await h.request(h.host(),'chat',{...body,message:'Changed'},s)).status,409);
   const status=await(await h.request(h.host(),'session')).json();assert.equal(status.dailyQuota.remaining,4);
 });
+test('Minute-rate rejection retains its short retry window rather than claiming the daily quota expired',async()=>{
+  const h=harness(),s=await h.session();h.store.consumeBudget=async()=>{throw new AssistantError('RATE_LIMITED','Minute limit',429);};
+  const response=await h.request(h.host(),'chat',h.message(),s);assert.equal(response.status,429);assert.equal(response.headers.get('retry-after'),'60');assert.equal(h.calls,0);
+});
 test('Compound navigation and browser-result continuation consume one user message, not each action round',async()=>{
   const h=harness(),s=await h.session();const first=await(await h.request(h.host(),'chat',{...h.message(),message:'buka satu berita teknologi terbaru'},s)).json();const tool=first.response.toolCalls[0];assert.ok(tool);
   const result={protocolVersion:'0.1',callId:tool.callId,capabilityId:tool.capabilityId,status:'success',code:'VERIFIED',message:'Verified',evidence:{route:'article'}};

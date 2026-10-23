@@ -2,6 +2,8 @@
 
 ## Public PageSquire integration demo
 
+[Open the live demo](https://pagesquire-kabarin-demo.vercel.app/) · [GitHub source](https://github.com/naufaldenta/pagesquire-kabarin-demo)
+
 The public deployment uses Node.js/Vercel and the existing private Supabase PostgreSQL schema, not the local PHP adapter. No password is required. The server allows **5 new user messages per trusted network per UTC day** (reset at **07:00 WIB**); action-result continuations and exact cached retries do not consume extra message slots. It separately caps model dispatch at 25/network/day and 100/site/day, and new messages at 50/site/day. Failed attempts remain charged. No automatic paid retries or fallback providers are enabled.
 
 Network identities are HMAC pseudonyms. Raw IP addresses are not stored in quota rows; expired counters are removed by bounded lazy cleanup after daily expiry. Conversations retain the existing 15-minute expiry. Browser incognito is not detected or fingerprinted: a fresh cookie/private window/new conversation on the same network keeps the shared daily limit. Shared NAT users share quota; a VPN or different network can obtain another network allowance. This is abuse mitigation, **not a verified human identity or complete bot defense**. Site-wide model limits remain the final cost bound. Vercel/provider platform logging has its own retention policy.

@@ -80,7 +80,7 @@ const errors = {
   NETWORK_ERROR: 'Koneksi ke server asisten terputus. Coba periksa koneksi kembali.',
   CSRF_MISMATCH: 'Sesi perlu diperbarui. Muat ulang halaman sebelum mencoba lagi.',
   HTTP_419: 'Sesi perlu diperbarui. Muat ulang halaman sebelum mencoba lagi.',
-  HTTP_429: 'Batas demo tercapai. Kuota harian diperbarui pukul 07.00 WIB; mengganti percakapan tidak menghapus batas.',
+  HTTP_429: 'Batas penggunaan tercapai. Jika kuota harian masih ada, tunggu satu menit. Kuota harian reset 07.00 WIB; percakapan baru tidak menghapus batas.',
   HTTP_503: 'Layanan AI belum tersedia. Pintasan panduan tetap bisa digunakan.',
 };
 const englishMessages = {
