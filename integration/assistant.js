@@ -29,7 +29,7 @@ root.innerHTML = `<button class="k-ai-launcher" id="k-ai-launcher" aria-label="B
 <section class="k-ai-panel" id="k-ai-panel" role="dialog" aria-label="Asisten Kabarin AI" hidden>
   <header class="k-ai-header"><span class="k-ai-avatar">${svg('spark')}</span><div><h2>Kabarin <span>AI</span></h2><p>Teman jelajah ceritamu.</p></div><div class="k-ai-header-tools"><button id="k-ai-refresh" class="k-ai-icon" aria-label="Periksa koneksi AI" title="Periksa koneksi AI">${svg('reset')}</button><button id="k-ai-close" class="k-ai-icon" aria-label="Tutup asisten">${svg('close')}</button></div></header>
   <div class="k-ai-status" id="k-ai-status" role="status"><span class="k-ai-status-dot"></span><span id="k-ai-status-text">Memeriksa koneksi…</span></div>
-  <p class="k-ai-privacy" id="k-ai-quota" role="status" hidden></p>
+  <p class="k-ai-quota" id="k-ai-quota" role="status" hidden></p>
   <div class="k-ai-operation" id="k-ai-operation" hidden><span id="k-ai-operation-text" role="status"></span><button type="button" id="k-ai-driving-stop">Hentikan</button></div>
   <div class="k-ai-log" id="k-ai-log" role="log" aria-label="Percakapan dengan Kabarin AI" aria-live="polite" aria-relevant="additions" tabindex="0"></div>
   <div class="k-ai-typing" id="k-ai-typing" hidden><span></span><span></span><span></span><p>Sedang memahami permintaanmu…</p></div>
@@ -109,7 +109,7 @@ function controls() {
 function quotaStatus() {
   const quota=session?.dailyQuota,element=$('#k-ai-quota');
   element.hidden=!quota;
-  if(quota)element.textContent=`Demo publik: sisa ${quota.remaining}/${quota.limit} pesan hari ini per jaringan. Reset 07.00 WIB. IP di-hash untuk kuota; incognito/percakapan baru tidak meresetnya. Jaringan bersama berbagi batas. Pintasan lokal tetap gratis.`;
+  if(quota)element.textContent=`Demo publik: ${quota.remaining}/${quota.limit} pesan tersisa · reset 07.00 WIB. Satu jaringan berbagi kuota, termasuk incognito. IP di-hash; pintasan tetap gratis.`;
   controls();
 }
 async function loadSession(signal) {

@@ -4,3 +4,4 @@
 *.jpeg -text
 *.png -text
 *.webp -text
+server/vendor/licenses/* whitespace=-blank-at-eof
